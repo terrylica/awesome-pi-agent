@@ -13,22 +13,27 @@ Concise, curated resources for extending and integrating the [pi coding agent](h
 
 ## Skills
 
+- [cloud-research-agent](https://github.com/aadishv/dotfiles/blob/main/.pi/agent/skills/cloud-research-agent/SKILL.md) — AI agent in cloud sandbox for researching GitHub repositories and libraries
 - [pi-skills](https://github.com/badlogic/pi-skills) — Community skills collection with example SKILL.md files and workflows
 
 ---
 
 ## Hooks
 
+- [LarsEckart/dotfiles](https://github.com/LarsEckart/dotfiles) — Dotfiles with pi agent configuration
+- [michalvavra/agents](https://github.com/michalvavra/agents) — User hooks (memory-mode, plan-mode, filter-output)
+- [pi-hooks](https://github.com/prateekmedia/pi-hooks) — Minimal reference extensions: checkpoint, LSP integration, and permission control
+- [pi-ralph](https://github.com/Whamp/pi-ralph) — Ralph Wiggum technique for autonomous iterative AI development loops
+- [pi-rewind-hook](https://github.com/nicobailon/pi-rewind-hook) — Rewind file changes with git-based checkpoints and conversation branching
 - [rhubarb-pi](https://github.com/qualisero/rhubarb-pi) — Collection of small hooks and extensions for pi agent
 - [shitty-extensions](https://github.com/hjanuschka/shitty-extensions) — Community hooks and extensions
-- [michalvavra/agents](https://github.com/michalvavra/agents) — User hooks (memory-mode, plan-mode, filter-output)
-- [LarsEckart/dotfiles](https://github.com/LarsEckart/dotfiles) — Dotfiles with pi agent configuration
 
 ---
 
 ## Custom Tools
 
 - [pi-agent-scip](https://github.com/qualisero/pi-agent-scip) — Adds SCIP code intelligence tools to pi agent
+- [pi-interview-tool](https://github.com/nicobailon/pi-interview-tool) — Web-based form tool with keyboard navigation, themes, and image attachments for gathering user responses
 
 ---
 
@@ -84,6 +89,17 @@ Please add only one-line entries (short description + link). Maintainers may re-
 ## Contributing
 
 Fork, create a topic branch, add your entry to the appropriate section in this README (one-line entry, alphabetical), and open a Pull Request using the PR template.
+
+### Discord Scraping Tools
+
+This repository includes automated tools for discovering new pi-agent resources shared in Discord servers. See [discord_scraping/](discord_scraping/) for:
+
+- Incremental message tracker with state persistence
+- GitHub link extraction
+- Automatic filtering for pi-agent content
+- Integration with awesome list checking
+
+Run `./discord_scraping/run-tracker.sh` to find new resources to add to this list.
 
 ## CI
 
