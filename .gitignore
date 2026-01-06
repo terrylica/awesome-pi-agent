@@ -1,0 +1,14 @@
+# Discord scraping state and results
+discord_scraping/data/
+discord_scraping/node_modules/
+discord_scraping/package-lock.json
+
+# Legacy paths (deprecated)
+discord-tracker-state.json
+discord-pi-resources/
+
+# Logs
+*.log
+
+# macOS
+.DS_Store

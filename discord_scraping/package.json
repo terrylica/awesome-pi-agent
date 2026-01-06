@@ -1,0 +1,13 @@
+{
+  "name": "discord-scraper",
+  "version": "1.0.0",
+  "description": "Discord message scraper using Chrome DevTools Protocol",
+  "scripts": {
+    "scrape": "node scripts/scrape-channel.js",
+    "links": "node scripts/extract-github-links.js",
+    "search": "node scripts/search-server.js"
+  },
+  "dependencies": {
+    "chrome-remote-interface": "^0.33.2"
+  }
+}
