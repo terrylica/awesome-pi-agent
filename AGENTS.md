@@ -31,6 +31,7 @@ npm install
 Notes:
 - The scraper stores state in `discord_scraping/data/` (gitignored).
 - `run.sh` automatically compares discovered repos vs `../README.md` and prints repos **not yet listed**.
+- `run.sh` also checks for **new sub-entry URLs** (GitHub `tree/` or `blob/` links) under repos that are already listed in `README.md`.
 
 Optional controls:
 

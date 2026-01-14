@@ -31,7 +31,7 @@ if [ -f "$PROJECT_ROOT/README.md" ] && [ -f "$AGGREGATE_REPOS" ]; then
                 echo "$repo|$url"
             fi
         done)
-    
+
     if [ -n "$NEW_REPOS" ]; then
         echo -e "${GREEN}🆕 New repositories not in awesome list:${NC}\n"
         echo "$NEW_REPOS" | while IFS='|' read name url; do
@@ -41,6 +41,48 @@ if [ -f "$PROJECT_ROOT/README.md" ] && [ -f "$AGGREGATE_REPOS" ]; then
         echo -e "\n${YELLOW}Consider adding these to $PROJECT_ROOT/README.md${NC}"
     else
         echo "✅ All found repositories are already in the awesome list"
+    fi
+
+    # Check for new sub-entries (tree/blob links) under repos that are already listed
+    echo -e "\n${BLUE}Checking for new sub-entries under already-listed repos...${NC}\n"
+
+    LATEST_RUN_DIR=$(ls -1dt "$SCRIPT_DIR"/data/runs/* 2>/dev/null | head -n 1)
+
+    if [ -n "$LATEST_RUN_DIR" ] && [ -f "$LATEST_RUN_DIR/all-messages.json" ]; then
+        # Repos already listed in README.md (repo roots only)
+        LISTED_REPOS=$(rg -o 'https://github\.com/[^\s)]+/[^\s)/]+' "$PROJECT_ROOT/README.md" | \
+            sed 's#https://github\.com/##' | \
+            sort -u)
+
+        # Candidate GitHub sub-links (tree/blob) discovered in the latest scraper run
+        CANDIDATE_SUBLINKS=$(jq -r '..|.links? // empty | .[]' "$LATEST_RUN_DIR/all-messages.json" 2>/dev/null | \
+            rg -e '^https://github\.com/[^/]+/[^/]+/(tree|blob)/' | \
+            sort -u)
+
+        MISSING_SUBENTRIES=$(echo "$CANDIDATE_SUBLINKS" | \
+            while read -r url; do
+                [ -z "$url" ] && continue
+                repo=$(echo "$url" | sed -E 's#^https://github\.com/([^/]+/[^/]+).*$#\1#')
+
+                if echo "$LISTED_REPOS" | rg -q -x "$repo"; then
+                    if ! rg -q -F "$url" "$PROJECT_ROOT/README.md"; then
+                        echo "$repo|$url"
+                    fi
+                fi
+            done)
+
+        if [ -n "$MISSING_SUBENTRIES" ]; then
+            echo -e "${GREEN}🆕 New sub-entry URLs (repo already listed, URL missing from README):${NC}\n"
+            echo "$MISSING_SUBENTRIES" | while IFS='|' read name url; do
+                echo "  - $name"
+                echo "    $url"
+            done
+            echo -e "\n${YELLOW}Consider adding these as sub-entries in $PROJECT_ROOT/README.md${NC}"
+        else
+            echo "✅ No new sub-entry URLs found for already-listed repos"
+        fi
+    else
+        echo "(No run data found to analyze sub-entries)"
     fi
 fi
 
