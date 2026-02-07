@@ -94,6 +94,7 @@ Skills are reusable workflows described in natural language (SKILL.md format) th
 
 - [CodexBar](https://github.com/steipete/CodexBar) — macOS menu bar app for tracking AI coding tool usage (session + weekly limits, reset timers) — supports Codex, Claude, Cursor, Gemini, and more
 - [claude-code-ui](https://github.com/KyleAMathews/claude-code-ui) — Real-time dashboard for monitoring Claude Code sessions with AI-powered summaries, PR tracking, and multi-repo support
+- [nono](https://github.com/lukehinds/nono) — Secure, kernel-enforced capability sandbox for AI agents (Landlock on Linux, Seatbelt on macOS) — blocks dangerous commands and enforces OS-level security primitives
 - [codemap](https://github.com/kcosr/codemap) — Compact, token-aware codebase maps for LLMs and coding agents (TypeScript/JavaScript symbol extraction, markdown structure)
 - [gob](https://github.com/juanibiapina/gob) — Process manager for AI agents with background job support and TUI interface
 - [PiSwarm](https://github.com/lsj5031/PiSwarm) — Parallel GitHub issue and PR processing using the `pi` agent and Git worktrees
