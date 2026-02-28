@@ -60,6 +60,7 @@ Extensions are TypeScript/JavaScript modules that enhance pi-agent functionality
 - [ogulcancelik/pi-ghostty-theme-sync](https://github.com/ogulcancelik/pi-ghostty-theme-sync) — Sync Ghostty terminal theme with pi session
 - [ogulcancelik/pi-sketch](https://github.com/ogulcancelik/pi-sketch) — Quick sketch pad - draw in browser, send to models
 - [pi-dcp](https://github.com/zenobi-us/pi-dcp) — Dynamic context pruning extension for intelligent conversation optimization
+- [pi-gui](https://github.com/VVander/pi-gui) — GUI extension providing visual interface for pi agent
 - [pi-screenshots-picker](https://github.com/Graffioh/pi-screenshots-picker) — Screenshot picker extension for better screenshot selections
 - [pi-super-curl](https://github.com/Graffioh/pi-super-curl) — Extension to empower curl requests with coding agent capabilities
 - [shitty-extensions](https://github.com/hjanuschka/shitty-extensions) — Community extensions collection
@@ -94,12 +95,15 @@ Skills are reusable workflows described in natural language (SKILL.md format) th
 
 ## Tools & Utilities
 
+- [agent-desktop](https://github.com/BaLaurent/agent-desktop) — Desktop application for pi agent with native UI
 - [CodexBar](https://github.com/steipete/CodexBar) — macOS menu bar app for tracking AI coding tool usage (session + weekly limits, reset timers) — supports Codex, Claude, Cursor, Gemini, and more
 - [claude-code-ui](https://github.com/KyleAMathews/claude-code-ui) — Real-time dashboard for monitoring Claude Code sessions with AI-powered summaries, PR tracking, and multi-repo support
-- [nono](https://github.com/lukehinds/nono) — Secure, kernel-enforced capability sandbox for AI agents (Landlock on Linux, Seatbelt on macOS) — blocks dangerous commands and enforces OS-level security primitives
 - [codemap](https://github.com/kcosr/codemap) — Compact, token-aware codebase maps for LLMs and coding agents (TypeScript/JavaScript symbol extraction, markdown structure)
 - [gondolin](https://github.com/earendil-works/gondolin) — Linux micro-VM sandbox with programmable network/filesystem and Pi integration
 - [gob](https://github.com/juanibiapina/gob) — Process manager for AI agents with background job support and TUI interface
+- [lima](https://github.com/lima-vm/lima) — Linux micro-VM environment for isolated agent execution
+- [nono](https://github.com/lukehinds/nono) — Secure, kernel-enforced capability sandbox for AI agents (Landlock on Linux, Seatbelt on macOS) — blocks dangerous commands and enforces OS-level security primitives
+- [opencode-dynamic-context-pruning](https://github.com/Opencode-DCP/opencode-dynamic-context-pruning) — Context optimization system for extended conversations
 - [PiSwarm](https://github.com/lsj5031/PiSwarm) — Parallel GitHub issue and PR processing using the `pi` agent and Git worktrees
 - [task-factory](https://github.com/patleeman/task-factory) — Queue-first work orchestrator for Pi with planning, execution skills, and web UI
 - [pi-ds](https://github.com/zenobi-us/pi-ds) — TUI design system components for pi-mono extensions with TypeScript support
@@ -133,13 +137,16 @@ Prompt templates (formerly "slash commands") let you create reusable prompt shor
 
 ## Examples & Recipes
 
+- [.agents (ivanrvpereira)](https://github.com/ivanrvpereira/.agents) — Agent configurations and template examples
 - [crossjam/mpr](https://github.com/crossjam/mpr/blob/main/content/pi_coding_agent.md) — Context and writeups referencing the agent
+- [gondolin-nix](https://github.com/luizribeiro/gondolin-nix) — Gondolin configuration using Nix for reproducible environments
 
 ---
 
 ## Related Projects
 
 - [anthropics/claude-code](https://github.com/anthropics/claude-code) — Official Anthropic agentic coding tool that lives in your terminal with natural language commands and git workflow support
+- [awesome-pi-agent (qualisero)](https://github.com/qualisero/awesome-pi-agent) — Community-curated awesome-style list of pi-agent resources
 - [claude-plugins-official](https://github.com/anthropics/claude-plugins-official) — Official Anthropic directory of Claude Code plugins with MCP servers, skills, and commands
 - [synthetic-lab/octofriend](https://github.com/synthetic-lab/octofriend) — Open-source coding assistant agent with friendly interactions and codebase understanding
 
